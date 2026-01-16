@@ -109,7 +109,14 @@ int main()
 
         case 2:
         {
-            std::cout << "2" << std::endl;
+            std::cout << "Tirando un deseo" << std::endl;
+            count_deseos++;
+
+            double roll = prob(rng);
+            std::cout << "tiro " << count_deseos << std::endl;
+
+            show_character(roll, rng, characters_5, characters_4, items, account);
+
             break;
         }
 
@@ -134,6 +141,11 @@ int main()
             gacha_time = false;
             break;
         }
+        }
+
+        if (count_deseos >= 90)
+        {
+            count_deseos = 0;
         }
     }
 
